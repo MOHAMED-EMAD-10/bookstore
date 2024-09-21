@@ -49,60 +49,17 @@
                                     <h2>Browse Through Book <em>Categories</em> Here.</h2>
                                 </div>
                             </div>
-                            <div class="col-lg-2 col-sm-6">
-                                <div class="item">
-                                    <div class="icon">
-                                        <img src="{{ asset('home/assets/images/icon-01.png') }}" alt="">
+                            @foreach ($categories as $category)
+                                <div class="col-lg-2 col-sm-6">
+                                    <div class="item">
+                                        <div class="icon">
+                                            <img src="{{ $category->image ?? asset('home/assets/images/icon-0' . rand(1, 6) . '.png') }}"
+                                                alt="">
+                                        </div>
+                                        <h4>{{ $category->name }}</h4>
                                     </div>
-                                    <h4>Motivational</h4>
-
                                 </div>
-                            </div>
-                            <div class="col-lg-2 col-sm-6">
-                                <div class="item">
-                                    <div class="icon">
-                                        <img src="{{ asset('home/assets/images/icon-02.png') }}" alt="">
-                                    </div>
-                                    <h4>Money</h4>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-sm-6">
-                                <div class="item">
-                                    <div class="icon">
-                                        <img src="{{ asset('home/assets/images/icon-03.png') }}" alt="">
-                                    </div>
-                                    <h4>Psychological</h4>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-sm-6">
-                                <div class="item">
-                                    <div class="icon">
-                                        <img src="{{ asset('home/assets/images/icon-04.png') }}" alt="">
-                                    </div>
-                                    <h4>Story</h4>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-sm-6">
-                                <div class="item">
-                                    <div class="icon">
-                                        <img src="{{ asset('home/assets/images/icon-05.png') }}" alt="">
-                                    </div>
-                                    <h4>Fictional</h4>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-sm-6">
-                                <div class="item">
-                                    <div class="icon">
-                                        <img src="{{ asset('home/assets/images/icon-06.png') }}" alt="">
-                                    </div>
-                                    <h4>Romance</h4>
-
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -120,133 +77,34 @@
                         <h2><em>Items</em> Currently In The Market.</h2>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="filters">
-                        <ul>
-                            <li data-filter="*" class="active">All Books</li>
-                            <li data-filter=".msc">Popular</li>
-                            <li data-filter=".dig">Latest</li>
-
-                        </ul>
-                    </div>
-                </div>
                 <div class="col-lg-12">
                     <div class="row grid">
-                        <div class="col-lg-6 currently-market-item all msc">
-                            <div class="item">
-                                <div class="left-image">
-                                    <img src="{{ asset('home/assets/images/book1.webp') }}" alt=""
-                                        style="border-radius: 20px; min-width: 195px;">
-                                </div>
-                                <div class="right-content">
-                                    <h4>Sarah Maas</h4>
-                                    <span class="author">
-                                        <img src="{{ asset('home/assets/images/author.jpg') }}" alt=""
-                                            style="max-width: 50px; border-radius: 50%;">
-                                        <h6>Robert T Kiyosaki</h6>
-                                    </span>
-                                    <div class="line-dec"></div>
-                                    <span class="bid">
-                                        Current Available<br><strong>10</strong><br>
-                                    </span>
-                                    <span class="ends">
-                                        Total<br><strong>20</strong><br>
-                                    </span>
-                                    <div class="text-button">
-                                        <a href="details.html">View Item Details</a>
+                        @foreach ($books as $book)
+                            <div class="col-lg-6 currently-market-item all msc">
+                                <div class="item">
+                                    <div class="left-image">
+                                        <img src="{{ asset('home/assets/images/book' . rand(1, 4) . '.webp') }}"
+                                            alt="" style="border-radius: 20px; min-width: 195px;">
+                                    </div>
+                                    <div class="right-content">
+                                        <h4>{{ $book->title }}</h4>
+                                        <span class="author">
+                                            <h6>{{ $book->author }}</h6>
+                                        </span>
+                                        <div class="line-dec"></div>
+                                        <span class="bid">
+                                            Current Available<br><strong>{{ $book->quantity }}</strong><br>
+                                        </span>
+                                        <div class="text-button">
+                                            <a href="details.html">View Item Details</a>
+                                            <a href="details.html">Borrow This Book</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <div class="col-lg-6 currently-market-item all msc">
-                            <div class="item">
-                                <div class="left-image">
-                                    <img src="{{ asset('home/assets/images/book2.webp') }}" alt=""
-                                        style="border-radius: 20px; min-width: 195px;">
-                                </div>
-                                <div class="right-content">
-                                    <h4>Broken Blade</h4>
-                                    <span class="author">
-                                        <img src="{{ asset('home/assets/images/author.jpg') }}" alt=""
-                                            style="max-width: 50px; border-radius: 50%;">
-                                        <h6>Robert T Kiyosaki</h6>
-                                    </span>
-                                    <div class="line-dec"></div>
-                                    <span class="bid">
-                                        Current Available<br><strong>10</strong><br>
-                                    </span>
-                                    <span class="ends">
-                                        Total<br><strong>20</strong><br>
-                                    </span>
-                                    <div class="text-button">
-                                        <a href="details.html">View Item Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div class="col-lg-6 currently-market-item all msc">
-                            <div class="item">
-                                <div class="left-image">
-                                    <img src="{{ asset('home/assets/images/book3.webp') }}" alt=""
-                                        style="border-radius: 20px; min-width: 195px;">
-                                </div>
-                                <div class="right-content">
-                                    <h4>Dwarves</h4>
-                                    <span class="author">
-                                        <img src="{{ asset('home/assets/images/author.jpg') }}" alt=""
-                                            style="max-width: 50px; border-radius: 50%;">
-                                        <h6>Robert T Kiyosaki</h6>
-                                    </span>
-                                    <div class="line-dec"></div>
-                                    <span class="bid">
-                                        Current Available<br><strong>10</strong><br>
-                                    </span>
-                                    <span class="ends">
-                                        Total<br><strong>20</strong><br>
-                                    </span>
-                                    <div class="text-button">
-                                        <a href="details.html">View Item Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div class="col-lg-6 currently-market-item all msc">
-                            <div class="item">
-                                <div class="left-image">
-                                    <img src="{{ asset('home/assets/images/book4.webp') }}" alt=""
-                                        style="border-radius: 20px; min-width: 195px;">
-                                </div>
-                                <div class="right-content">
-                                    <h4>Steven Erikson</h4>
-                                    <span class="author">
-                                        <img src="{{ asset('home/assets/images/author.jpg') }}" alt=""
-                                            style="max-width: 50px; border-radius: 50%;">
-                                        <h6>Robert T Kiyosaki</h6>
-                                    </span>
-                                    <div class="line-dec"></div>
-                                    <span class="bid">
-                                        Current Available<br><strong>10</strong><br>
-                                    </span>
-                                    <span class="ends">
-                                        Total<br><strong>20</strong><br>
-                                    </span>
-                                    <div class="text-button">
-                                        <a href="details.html">View Item Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
+                        @endforeach
                     </div>
+                    {{ $books->links() }}
                 </div>
             </div>
         </div>

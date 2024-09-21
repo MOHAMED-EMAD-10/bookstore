@@ -33,4 +33,9 @@ class Category extends Model
     {
         return 'slug';
     }
+
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
 }

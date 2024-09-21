@@ -18,14 +18,27 @@
         <li class="{{ request()->is('dashboard/categories*') ? 'active' : '' }}"><a
                 href="{{ route('dashboard.categories.index') }}"> <i class="icon-grid"></i>Categories</a></li>
         <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i
-                    class="icon-windows"></i>Example dropdown </a>
+                    class="icon-windows"></i>Books</a>
             <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
+                <li><a href="{{ route('dashboard.books.index') }}">All Books</a></li>
+                <li><a href="{{ route('dashboard.books.create') }}">Create Books</a></li>
             </ul>
         </li>
-        <li><a href="login.html"> <i class="icon-logout"></i>Login page </a></li>
+        <li><a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse"> <i
+                    class="icon-windows"></i>Borrowings</a>
+            <ul id="exampledropdownDropdown2" class="collapse list-unstyled ">
+                <li><a href="{{ route('dashboard.borrowings.request') }}">Request</a></li>
+                <li><a href="{{ route('dashboard.borrowings.index') }}">Borrowings</a></li>
+            </ul>
+        </li>
+        {{-- <li class="{{ request()->is('dashboard/borrowings*') ? 'active' : '' }}"><a
+                href="{{ route('dashboard.borrowings.index') }}"> <i class="icon-grid"></i>Borrowings</a></li>
+        <li> --}}
+        <form id="logout" action="{{ route('logout') }}" method="POST" class="nav-link">
+            @csrf
+            <button type="submit" class="btn btn-primary">Logout <i class="icon-logout"></i></button>
+        </form>
+        </li>
     </ul>
 </nav>
 <!-- Sidebar Navigation end-->

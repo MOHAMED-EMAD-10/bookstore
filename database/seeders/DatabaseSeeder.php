@@ -15,11 +15,15 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        if (Storage::disk('public')->exists('categories')) {
-            Storage::disk('public')->deleteDirectory('categories');
-            $this->command->info('Folder deleted: categories');
-        } else {
-            $this->command->info('Folder not found: categories');
+        $folders = ['categories', 'books'];
+
+        foreach ($folders as $folder) {
+            if (Storage::disk('public')->exists($folder)) {
+                Storage::disk('public')->deleteDirectory($folder);
+                $this->command->info("Folder deleted: $folder");
+            } else {
+                $this->command->info("Folder not found: $folder");
+            }
         }
 
         // Admin User
@@ -31,8 +35,12 @@ class DatabaseSeeder extends Seeder
             'status' => 1,
         ]);
 
+        User::factory(9)->create();
+
         $this->call([
             CategorySeeder::class,
+            BookSeeder::class,
+            BorrowingSeeder::class
         ]);
     }
 }
