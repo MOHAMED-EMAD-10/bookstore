@@ -12,7 +12,7 @@
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li><a href="{{ route('home.index') }}" class="active">Home</a></li>
-                        <li><a href="explore.html">Borrowed Books</a></li>
+                        <li><a href="{{ route('home.borrowed') }}">Borrowed Books</a></li>
                         <li><a href="author.html">Owned Books</a></li>
                         <li>
                             <form action="{{ route('logout') }}" method="POST">
