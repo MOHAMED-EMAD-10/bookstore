@@ -36,12 +36,12 @@ class Book extends Model
         ];
     }
 
-    protected function description(): Attribute
-    {
-        return Attribute::make(
-            get: fn(string $value) => Str::limit($value, 70),
-        );
-    }
+    // protected function description(): Attribute
+    // {
+    //     return Attribute::make(
+    //         get: fn(string $value) => Str::limit($value, 70),
+    //     );
+    // }
 
     public function category()
     {

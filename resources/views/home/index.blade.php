@@ -96,7 +96,7 @@
                                             Current Available<br><strong>{{ $book->quantity }}</strong><br>
                                         </span>
                                         <div class="text-button">
-                                            <a href="details.html">View Item Details</a>
+                                            <a href="{{ route('home.show', $book->slug) }}">View Item Details</a>
                                             <form action="{{ route('home.borrow', $book->slug) }}" method="POST">
                                                 @csrf
                                                 <button type="submit" class="btn btn-primary">Borrow

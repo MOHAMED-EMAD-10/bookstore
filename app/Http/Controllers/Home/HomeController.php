@@ -15,4 +15,9 @@ class HomeController extends Controller
         $books = Book::with('category')->paginate(8);
         return view('home.index', compact('categories', 'books'));
     }
+
+    public function show(Book $book)
+    {
+        return view('home.details', compact('book'));
+    }
 }
