@@ -30,7 +30,7 @@ class BorrowingController extends Controller
     public function borrowed()
     {
         $books  = Book::whereHas('users', function ($query) {
-            $query->where('id', auth()->user()->id);
+            $query->where('users.id', auth()->user()->id);
         })->get();
 
         return view('home.borrowed', compact('books'));

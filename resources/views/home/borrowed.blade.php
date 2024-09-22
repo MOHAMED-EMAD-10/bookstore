@@ -29,7 +29,7 @@
                                             Current Available<br><strong>{{ $book->quantity }}</strong><br>
                                         </span>
                                         <span class="bid">
-                                            Status<br><strong>{{ $book-> }}</strong><br>
+                                            Status<br><strong>{{ $book->status }}</strong><br>
                                         </span>
                                         <div class="text-button">
                                             <a href="{{ route('home.show', $book->slug) }}">View Item Details</a>
