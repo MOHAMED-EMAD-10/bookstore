@@ -50,7 +50,7 @@ class User extends Authenticatable
         return $this->status;
     }
 
-    public function books()
+    public function borrowings()
     {
         return $this->belongsToMany(Book::class, 'borrowings')
             ->withPivot('status');

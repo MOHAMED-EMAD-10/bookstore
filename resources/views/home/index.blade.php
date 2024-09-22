@@ -87,7 +87,7 @@
                                             alt="" style="border-radius: 20px; min-width: 195px;">
                                     </div>
                                     <div class="right-content">
-                                        <h4>{{ $book->title }}</h4>
+                                        <h4>{{ Str::limit($book->title, 30) }}</h4>
                                         <span class="author">
                                             <h6>{{ $book->author }}</h6>
                                         </span>
@@ -97,7 +97,11 @@
                                         </span>
                                         <div class="text-button">
                                             <a href="details.html">View Item Details</a>
-                                            <a href="details.html">Borrow This Book</a>
+                                            <form action="{{ route('home.borrow', $book->slug) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-primary">Borrow
+                                                    This Book</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

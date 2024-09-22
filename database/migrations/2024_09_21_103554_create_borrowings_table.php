@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Book::class);
-            $table->enum('status', ['pending', 'rejected', 'accepted']);
+            $table->enum('status', ['pending', 'rejected', 'accepted'])->default('pending');
             $table->timestamps();
         });
     }

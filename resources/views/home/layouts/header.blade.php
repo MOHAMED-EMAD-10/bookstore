@@ -11,10 +11,9 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="explore.html">Explore</a></li>
-                        <li><a href="details.html">Item Details</a></li>
-                        <li><a href="author.html">Author</a></li>
+                        <li><a href="{{ route('home.index') }}" class="active">Home</a></li>
+                        <li><a href="explore.html">Borrowed Books</a></li>
+                        <li><a href="author.html">Owned Books</a></li>
                         <li>
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
