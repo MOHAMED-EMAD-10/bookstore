@@ -53,7 +53,7 @@
                                 <div class="col-lg-2 col-sm-6">
                                     <div class="item">
                                         <div class="icon">
-                                            <img src="{{ $category->image ?? asset('home/assets/images/icon-0' . rand(1, 6) . '.png') }}"
+                                            <img src="{{ $category->image ? asset('storage/categories/' . $category->image) : asset('home/assets/images/icon-0' . rand(1, 6) . '.png') }}"
                                                 alt="">
                                         </div>
                                         <h4>{{ $category->name }}</h4>

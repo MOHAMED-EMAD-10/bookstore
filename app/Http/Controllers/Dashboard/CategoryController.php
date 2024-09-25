@@ -24,6 +24,8 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
+
+
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $fileName = time() . '-' . $image->hashName();

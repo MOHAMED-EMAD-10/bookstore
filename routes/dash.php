@@ -6,7 +6,7 @@ use App\Http\Controllers\Dashboard\BookController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\DashboardController;
 
-Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'dashboard'], function () {
+Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::name('dashboard.')->group(function () {
         Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');

@@ -62,7 +62,7 @@
                                 <td>{{ $category->name }}</td>
                                 <td>{{ $category->slug ?? '-' }}</td>
                                 <td>
-                                    <img src="{{ asset('storage/categories/' . $category->image) }}" alt="">
+                                    <img src="{{ asset('storage/categories/' . $category->image) }}" style='max-width:50px;' alt="bb">
                                 </td>
                                 <td>
                                     <div class="body d-flex justify-content-start mb-2">

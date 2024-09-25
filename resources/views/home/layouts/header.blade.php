@@ -4,11 +4,8 @@
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        <img src="{{ asset('home/assets/images/logo.png') }}" alt="">
-                    </a>
-                    <!-- ***** Logo End ***** -->
+
+
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li><a href="{{ route('home.index') }}" class="active">Home</a></li>

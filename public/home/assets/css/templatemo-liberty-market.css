@@ -814,7 +814,7 @@ Categories & Collections Style
 */
 
 .categories-collections {
-  background-image: url(../images/dark-bg.jpg);
+  background-image: url(..//images/OIP.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -830,6 +830,8 @@ Categories & Collections Style
   bottom: 0;
   right: 30px;
   content: '';
+    background-size: cover;
+
 }
 
 .categories .item {
